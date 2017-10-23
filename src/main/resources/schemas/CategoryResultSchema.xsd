@@ -1,0 +1,32 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://tempuri.org/CategoryResultSchema.xsd"
+            targetNamespace="http://tempuri.org/CategoryResultSchema.xsd"
+            elementFormDefault="qualified">
+    <xsd:element name="CategoryResults" type="tns:CategoryResultsType"/>
+    <xsd:complexType name="CategoryResultsType">
+        <xsd:sequence>
+            <xsd:element name="results" type="tns:AllResultsType"/>
+            <xsd:element name="generated" type="xsd:dateTime"/>
+            <xsd:element name="url" type="xsd:anyURI"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AllResultsType">
+        <xsd:sequence>
+            <xsd:element name="result" type="tns:SingleResultsType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SingleResultsType">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="min-cost" type="xsd:decimal"/>
+            <xsd:element name="image" type="tns:ImageType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ImageType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:base64Binary">
+                <xsd:attribute name="original_name" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+</xsd:schema>
