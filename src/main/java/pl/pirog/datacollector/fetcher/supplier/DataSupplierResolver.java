@@ -1,9 +1,9 @@
-package pl.pirog.datacollector.supplier;
+package pl.pirog.datacollector.fetcher.supplier;
 
 import lombok.SneakyThrows;
 import pl.pirog.datacollector.fetcher.DataSupplierFetcher;
 import pl.pirog.datacollector.fetcher.ceneo.DataFetcher;
-import pl.pirog.datacollector.supplier.ceneo.CeneoURIResolver;
+import pl.pirog.datacollector.fetcher.supplier.ceneo.CeneoURIResolver;
 
 public class DataSupplierResolver {
     @SneakyThrows
@@ -29,7 +29,7 @@ public class DataSupplierResolver {
         static DataSupplier find(String url) {
             for (DataSupplier dataSupplier : values()) {
                 for (String host : dataSupplier.uriResolver.getHosts()) {
-                    if (host.equalsIgnoreCase(DataSupplierURIResolver.getHostForUrl(url))) return dataSupplier;
+                    if (host.equalsIgnoreCase(dataSupplier.uriResolver.getHostForUrl(url))) return dataSupplier;
                 }
             }
             throw new IllegalArgumentException(String.format("Unknown data supplier for URL: %s", url));

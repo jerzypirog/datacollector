@@ -1,4 +1,4 @@
-package pl.pirog.datacollector.supplier;
+package pl.pirog.datacollector.fetcher.supplier;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

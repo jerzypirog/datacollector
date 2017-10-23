@@ -5,7 +5,7 @@ import org.apache.commons.cli.MissingOptionException;
 import pl.pirog.datacollector.fetcher.DataSupplierFetcher;
 import pl.pirog.datacollector.formatter.OutputFormatResolver;
 import pl.pirog.datacollector.model.ProductItem;
-import pl.pirog.datacollector.supplier.DataSupplierResolver;
+import pl.pirog.datacollector.fetcher.supplier.DataSupplierResolver;
 
 import java.util.List;
 
@@ -15,7 +15,8 @@ class App {
             AppParams params = AppParams.parseArgs(args);
             DataSupplierFetcher fetcher = new DataSupplierResolver().createFetcher(params.getUrl());
             List<ProductItem> items = fetcher.fetch();
-            new OutputFormatResolver(params.getFormat()).createConverter(params.getUrl(), params.getOutput())
+            new OutputFormatResolver(params.getFormat())
+                    .createConverter(params.getUrl(), params.getOutput())
                     .format(items);
         } catch (MissingOptionException e) {
             HelpFormatter formatter = new HelpFormatter();

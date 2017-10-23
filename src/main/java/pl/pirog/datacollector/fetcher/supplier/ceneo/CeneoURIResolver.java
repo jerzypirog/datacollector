@@ -1,8 +1,8 @@
-package pl.pirog.datacollector.supplier.ceneo;
+package pl.pirog.datacollector.fetcher.supplier.ceneo;
 
 import com.google.common.collect.ImmutableList;
 import lombok.SneakyThrows;
-import pl.pirog.datacollector.supplier.DataSupplierURIResolver;
+import pl.pirog.datacollector.fetcher.supplier.DataSupplierURIResolver;
 
 import java.net.URI;
 import java.net.URISyntaxException;

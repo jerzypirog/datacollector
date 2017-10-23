@@ -1,4 +1,4 @@
-package pl.pirog.datacollector.supplier
+package pl.pirog.datacollector.fetcher.supplier
 
 import spock.lang.Specification
 

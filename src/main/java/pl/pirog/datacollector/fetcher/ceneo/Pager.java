@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import pl.pirog.datacollector.supplier.DataSupplierConnector;
-import pl.pirog.datacollector.supplier.ceneo.CeneoURIResolver;
+import pl.pirog.datacollector.fetcher.supplier.DataSupplierConnector;
+import pl.pirog.datacollector.fetcher.supplier.ceneo.CeneoURIResolver;
 
 import java.util.Optional;
 

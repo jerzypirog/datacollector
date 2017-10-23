@@ -1,15 +1,15 @@
-package pl.pirog.datacollector.supplier;
+package pl.pirog.datacollector.fetcher.supplier;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
 public interface DataSupplierURIResolver {
-    static String getHostForUrl(String url) throws URISyntaxException {
+    default String getHostForUrl(String url) throws URISyntaxException {
         return new URI(fixURL(url)).getHost();
     }
 
-    static String fixURL(String url) {
+    default String fixURL(String url) {
         if (!url.startsWith("http") && !url.startsWith("https")) {
             url = "http://" + url;
         }

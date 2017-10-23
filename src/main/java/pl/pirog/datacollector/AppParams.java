@@ -12,6 +12,10 @@ class AppParams {
     @Getter
     private static final Options options = new Options();
 
+    private AppParams(CommandLine cmd) {
+        this.cmd = cmd;
+    }
+
     static {
         options.addOption(Option.builder("u")
                 .hasArg()
@@ -31,15 +35,11 @@ class AppParams {
                 .build());
 
     }
-
     private final CommandLine cmd;
     private String url;
     private String output;
-    private OutputFormatResolver.OutputFormat format;
 
-    private AppParams(CommandLine cmd) {
-        this.cmd = cmd;
-    }
+    private OutputFormatResolver.OutputFormat format;
 
     public static AppParams parseArgs(String[] args) throws ParseException {
         CommandLineParser parser = new DefaultParser();

@@ -4,7 +4,7 @@ import lombok.SneakyThrows;
 import org.apache.commons.io.IOUtils;
 import org.jsoup.nodes.Element;
 import pl.pirog.datacollector.model.Image;
-import pl.pirog.datacollector.supplier.ceneo.CeneoURIResolver;
+import pl.pirog.datacollector.fetcher.supplier.ceneo.CeneoURIResolver;
 
 import java.io.File;
 import java.io.FileNotFoundException;
