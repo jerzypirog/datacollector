@@ -15,19 +15,20 @@ mvn clean package
 ```
 and next use (Linux):
 ```
-./datacollector.sh -u xx -o yy
+./datacollector.sh -u=url -o=output
 ```
 or (Windows):
 ```
-datacollector -u=xx -o=yy
+datacollector -u=url -o=output
 ```
 where only -u parameter is obligatory.
 If you want to print help use command:
 ```
 datacollector
 ```
+
 ##Examples
 ```
 datacollector -u=http://www.ceneo.pl/Filmy_Blu-ray;017Sensacyjny_P12-43274.htm
-./datacollector.sh -u "http://www.ceneo.pl/Gitary;017P1-1222239P2-169175.htm" -o data.xml
+./datacollector.sh -u="http://www.ceneo.pl/Gitary;017P1-1222239P2-169175.htm" -o=data.xml
 ```
